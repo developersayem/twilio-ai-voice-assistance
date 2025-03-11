@@ -1,0 +1,14 @@
+services:
+  - name: fastify-server
+    type: web
+    runtime: node
+    plan: free  # Change to "starter" or "pro" if needed
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18  # Use 18+ for built-in fetch
+      - key: PORT
+        value: 5050
+      - key: OPENAI_API_KEY
+        sync: false  # Set this manually in Render's environment variables
